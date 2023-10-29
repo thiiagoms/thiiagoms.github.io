@@ -1,68 +1,37 @@
-class TypeWriter {
-    constructor(txtElement, words, wait = 3000) {
-        this.txtElement = txtElement;
-        this.words = words;
-        this.txt = '';
-        this.wordIndex = 0;
-        this.wait = parseInt(wait, 8);
-        this.type();
-        this.isDeleting = false;
-    }
+const TypeWriter = (txtElement, words, wait = 3000) => {
+    let txt = '';
+    let wordIndex = 0;
+    let isDeleting = false;
 
-    type() {
-        // Current index of word
-        const current = this.wordIndex % this.words.length;
-        // Get full text of current word
-        const fullTxt = this.words[current];
+    const type = () => {
+        const current = wordIndex % words.length;
+        const fullTxt = words[current];
 
-        // Check if deleting
-        if (this.isDeleting) {
-            // Remove char
-            this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-            // Add char
-            this.txt = fullTxt.substring(0, this.txt.length + 1);
+        txt = isDeleting ? fullTxt.substring(0, txt.length - 1) : fullTxt.substring(0, txt.length + 1);
+        txtElement.innerHTML = `<h3 id="#typewriter">${txt}</h3>`;
+
+        let typeSpeed = isDeleting ? 100 / 2 : 100;
+
+        if (!isDeleting && txt === fullTxt) {
+            isDeleting = true;
+            return setTimeout(type, wait);
         }
 
-        // Insert txt into element
-        this.txtElement.innerHTML = `<h3 id="#typewriter">${this.txt}</h3>`;
-
-        // change color for data-text
-        this.txtElement.innerHTML = `<h3 id="#typewriter">${this.txt}</h3>`;
-
-        // Initial Type Speed
-        let typeSpeed = 100;
-
-        if (this.isDeleting) {
-            typeSpeed /= 2;
-        }
-
-        // If word is complete
-        if (!this.isDeleting && this.txt === fullTxt) {
-            // Make pause at end
-            typeSpeed = this.wait;
-            // Set delete to true
-            this.isDeleting = true;
-        } else if (this.isDeleting && this.txt === '') {
-            this.isDeleting = false;
-            // Move to next word
-            this.wordIndex++;
-            // Pause before start typing
+        if (isDeleting && txt === '') {
+            isDeleting = false;
+            wordIndex++;
             typeSpeed = 300;
         }
 
-        setTimeout(() => this.type(), typeSpeed);
-    }
-}
+        setTimeout(type, typeSpeed);
+    };
 
-// Init On DOM Load
-document.addEventListener('DOMContentLoaded', init);
+    return { type };
+};
 
-// Init App
-function init() {
+(function init() {
     const txtElement = document.querySelector('#typewriter');
     const words = JSON.parse(txtElement.getAttribute('data-words'));
     const wait = txtElement.getAttribute('data-wait');
-    // Init TypeWriter
-    new TypeWriter(txtElement, words, wait);
-}
+    TypeWriter(txtElement, words, wait).type();
+})();
