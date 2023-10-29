@@ -21,6 +21,7 @@
 
 - [Dependencies :package:](#dependecies)
 - [Run :runner:](#run)
+- [Credits :clap:](#creddits)
 
 ### Dependencies
 
@@ -34,3 +35,7 @@ $ git clone https://github.com/thiiagoms/thiiagoms.github.io
 ```
 
 02 -) Open `index.html` with your favorite browser
+
+### Creddits
+
+Credits for this awesome template :purple_heart: : <a href="https://www.youtube.com/watch?v=b5s55FzPTac&t=1289s">AsmrProg</a>
