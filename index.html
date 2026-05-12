@@ -4,95 +4,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="assets/favicon/site.webmanifest">
-    <title>Thiago Silva - Full Stack Developer 🐘</title>
+    <title>Thiago Silva - Full Stack Developer</title>
 </head>
 
 <body>
-    <header>
-        <div id="particles"></div>
-        <div class="info-text">
-            <h1>I'm</h1>
-            <h3 id="typewriter" data-wait="3000"
-                data-words='["Thiago Silva", "A Full-Stack PHP Developer", "Enthusiast in Go and Python"]'>
-            </h3>
-            <a href="#about" class="scroll"><i class='bx bxs-down-arrow'></i></a>
-        </div>
-    </header>
+    <div id="particles" aria-hidden="true"></div>
 
-    <section id="about">
-        <div class="header">
-            <h1>About</h1>
-            <a href="https://www.linkedin.com/in/thiiagoms">
-                <i class='bx bxl-linkedin-square'></i>
-                Hire Me
-            </a>
-        </div>
-        <div class="card">
-            <img src="assets/img/logo.png">
-            <div class="info">
-                <h1>Hello World!</h1>
-                <p>
-                    I'm a highly reliable developer in the field of information technology, proficient in
-                    problem-solving. I'm understanding and enthusiasm contribute to effective teamwork, and i'm
-                    dedicated to optimizing processes. Continuously striving to enhance code quality, you align it with
-                    market-demanded best practices. I'm willingness to assist is evident and always available
-                    to support and collaboration.
+    <main class="terminal-shell">
+        <section class="terminal-window hero-terminal" aria-labelledby="intro-title">
+            <div class="terminal-titlebar">
+                <div class="window-controls" aria-hidden="true">
+                    <span class="control close"></span>
+                    <span class="control minimize"></span>
+                    <span class="control maximize"></span>
+                </div>
+                <span class="terminal-path">thiago@portfolio:~/home</span>
+                <span class="terminal-status">online</span>
+            </div>
 
-                    If there's anything I can help you with, I'm here to assist!
+            <div class="terminal-body">
+                <nav class="command-nav" aria-label="Portfolio sections">
+                    <a href="#about"><i class="fa-solid fa-user"></i> about</a>
+                    <a href="#skills"><i class="fa-solid fa-code"></i> skills</a>
+                    <a href="#work"><i class="fa-solid fa-briefcase"></i> work</a>
+                    <a href="https://www.linkedin.com/in/thiiagoms"><i class="fa-brands fa-linkedin"></i> linkedin</a>
+                    <a href="https://t.me/thiiagoms"><i class="fa-brands fa-telegram"></i> telegram</a>
+                </nav>
+
+                <div class="prompt-line"><span class="prompt">$</span> whoami</div>
+                <h1 id="intro-title">Thiago Silva</h1>
+                <p class="role-line">
+                    <span id="typewriter" data-wait="2200"
+                        data-words='["Full-Stack PHP Developer", "Go and Python Enthusiast", "Secure Software Builder"]'></span>
                 </p>
-            </div>
-        </div>
-    </section>
+                <p class="intro-copy">
+                    Reliable full-stack developer focused on pragmatic problem solving, secure systems, clean code,
+                    and collaboration that keeps products moving.
+                </p>
 
-    <section id="features">
-        <div class="header">
-        </div>
-        <div class="feature-cards">
-            <div class="card">
-                <div class="info">
-                    <i class='bx bx-lock-alt'></i>
-                    <h1>Security</h1>
+                <div class="terminal-actions" aria-label="Primary actions">
+                    <a href="#work" class="command-button"><i class="fa-solid fa-terminal"></i> ./show-work</a>
+                    <a href="https://t.me/thiiagoms" class="command-button secondary"><i class="fa-brands fa-telegram"></i> contact --telegram</a>
+                    <a href="https://www.linkedin.com/in/thiiagoms" class="command-button secondary"><i class="fa-brands fa-linkedin"></i> contact --linkedin</a>
+                </div>
+
+                <div class="status-grid" aria-label="Developer highlights">
+                    <div><span>stack</span><strong>PHP / Go / Python</strong></div>
+                    <div><span>focus</span><strong>Security + Quality</strong></div>
+                    <div><span>mode</span><strong>Team-first</strong></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="terminal-section" aria-labelledby="about-title">
+            <div class="section-command"><span class="prompt">$</span> cat about.md</div>
+            <div class="content-grid about-grid">
+                <div class="profile-panel">
+                    <img src="assets/img/logo.png" alt="Thiago Silva logo">
+                    <div>
+                        <p class="eyebrow">profile</p>
+                        <h2 id="about-title">Hello World.</h2>
+                    </div>
+                </div>
+                <div class="text-panel">
                     <p>
-                        I'm a IT professional with a strong emphasis on developing secure software. My problem-solving
-                        skills are geared towards creating dependable solutions, prioritizing security measures that
-                        exceed industry standards. I consistently align my code with the best practices required for
-                        safeguarding software.
+                        I work in information technology building dependable software and improving processes. My
+                        approach is practical: understand the problem, collaborate clearly, and ship code that is easy to
+                        maintain.
+                    </p>
+                    <p>
+                        I care about secure implementation, code quality, and helping teams turn ideas into reliable
+                        products. If there is something I can help with, I am available to support and collaborate.
                     </p>
                 </div>
             </div>
-            <div class="card">
-                <div class="info">
-                    <i class='bx bx-code-alt'></i>
-                    <h1>Code Quality</h1>
-                    <p>
-                        I'm dedicated to swiftly adapting to new technologies, consistently engaging in ongoing
-                        learning. My proactive approach ensures I stay updated with the latest tools and methodologies,
-                        allowing me to confidently integrate new tech advancements into my work.
-                    </p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="info">
-                    <<i class='bx bx-chat'></i>
-                        <h1>Teamwork</h1>
-                        <p>
-                            My strength lies in collaborative teamwork. I naturally thrive in team environments,
-                            fostering positive workspaces that encourage idea exchange. I actively contribute to
-                            collective goals, promoting a cooperative atmosphere and efficient problem-solving.
-                        </p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <button class="scroll-top" onclick="scrollToTop()">
-        <i class='bx bxs-up-arrow'></i>
+        <section id="skills" class="terminal-section" aria-labelledby="skills-title">
+            <div class="section-command"><span class="prompt">$</span> ls ./strengths</div>
+            <div class="section-heading">
+                <p class="eyebrow">capabilities</p>
+                <h2 id="skills-title">What I bring to a codebase</h2>
+            </div>
+            <div class="feature-cards">
+                <article class="terminal-card">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Security</h3>
+                    <p>
+                        I build with secure defaults, defensive thinking, and attention to the details that keep systems
+                        reliable in production.
+                    </p>
+                </article>
+                <article class="terminal-card">
+                    <i class="fa-solid fa-code-branch"></i>
+                    <h3>Code Quality</h3>
+                    <p>
+                        I keep learning, adapt to new tools, and favor code that is clear, testable, and aligned with
+                        current engineering practices.
+                    </p>
+                </article>
+                <article class="terminal-card">
+                    <i class="fa-solid fa-comments"></i>
+                    <h3>Teamwork</h3>
+                    <p>
+                        I work well in collaborative environments, contribute to shared goals, and keep communication
+                        direct and useful.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section id="work" class="terminal-section" aria-labelledby="work-title">
+            <div class="section-command"><span class="prompt">$</span> open portfolio.png</div>
+            <div class="work-panel">
+                <div>
+                    <p class="eyebrow">portfolio</p>
+                    <h2 id="work-title">Built for useful software</h2>
+                    <p>
+                        My work centers on full-stack web development, backend reliability, practical automation, and
+                        cleaner development workflows.
+                    </p>
+                    <div class="contact-links" aria-label="Contact links">
+                        <a href="https://github.com/thiiagoms" class="inline-link"><i class="fa-brands fa-github"></i> github.com/thiiagoms</a>
+                        <a href="https://t.me/thiiagoms" class="inline-link"><i class="fa-brands fa-telegram"></i> t.me/thiiagoms</a>
+                    </div>
+                </div>
+                <img src="assets/img/portfolio.png" alt="Portfolio preview">
+            </div>
+        </section>
+    </main>
+
+    <button class="scroll-top" type="button" onclick="scrollToTop()" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
     </button>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>

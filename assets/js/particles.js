@@ -1,93 +1,94 @@
-particlesJS("particles", {
-    particles: {
-        number: {
-            value: 100,
-            density: {
-                enable: true,
-                value_area: 800
-            }
-        },
-        color: {
-            value: "#ffffff"
-        },
-        shape: {
-            type: "circle",
-            stroke: {
-                width: 0,
-                color: "#000000"
-            }
-        },
-        opacity: {
-            value: 0.8,
-            random: true,
-            animation: {
-                enable: true,
-                speed: 1,
-                opacity_min: 0,
-                sync: false
-            }
-        },
-        size: {
-            value: 3,
-            random: true
-        },
-        line_linked: {
-            enable: true,
-            distance: 150,
-            color: "#ffffff",
-            opacity: 0.4,
-            width: 1
-        },
-        move: {
-            enable: true,
-            speed: 10,
-            direction: "none",
-            random: true,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
-        }
-    },
-    interactivity: {
-        detectsOn: "canvas",
-        events: {
-            onHover: {
-                enable: true,
-                mode: "push"
+if (window.particlesJS) {
+    particlesJS("particles", {
+        particles: {
+            number: {
+                value: 65,
+                density: {
+                    enable: true,
+                    value_area: 900
+                }
             },
-            onClick: {
+            color: {
+                value: "#65ffb5"
+            },
+            shape: {
+                type: "circle",
+                stroke: {
+                    width: 0,
+                    color: "#000000"
+                }
+            },
+            opacity: {
+                value: 0.52,
+                random: true,
+                animation: {
+                    enable: true,
+                    speed: 0.7,
+                    opacity_min: 0,
+                    sync: false
+                }
+            },
+            size: {
+                value: 2,
+                random: true
+            },
+            line_linked: {
                 enable: true,
-                mode: "push"
+                distance: 150,
+                color: "#67d8ff",
+                opacity: 0.22,
+                width: 1
             },
-            resize: true
-        },
-        modes: {
-            repulse: {
-                distance: 100,
-                duration: 0.4
-            },
-            push: {
-                particles_nb: 4
+            move: {
+                enable: true,
+                speed: 2.4,
+                direction: "none",
+                random: true,
+                straight: false,
+                out_mode: "out",
+                bounce: false
             }
-        }
-    },
-    retina_detect: true
-});
+        },
+        interactivity: {
+            detectsOn: "canvas",
+            events: {
+                onHover: {
+                    enable: true,
+                    mode: "repulse"
+                },
+                onClick: {
+                    enable: true,
+                    mode: "push"
+                },
+                resize: true
+            },
+            modes: {
+                repulse: {
+                    distance: 90,
+                    duration: 0.4
+                },
+                push: {
+                    particles_nb: 3
+                }
+            }
+        },
+        retina_detect: true
+    });
+}
 
 function scrollToTop() {
     window.scrollTo({
         top: 0,
+        behavior: "smooth"
     });
 }
 
 window.addEventListener('scroll', function () {
-    
-    let scrollTopButton = document.querySelector('.scroll-top');
-    
-    if (this.window.pageYOffset > 200) {
-        scrollTopButton.style.display = 'block';
-        return;
-    } 
+    const scrollTopButton = document.querySelector('.scroll-top');
 
-    scrollTopButton.style.display = 'none';
+    if (!scrollTopButton) {
+        return;
+    }
+
+    scrollTopButton.style.display = window.pageYOffset > 200 ? 'block' : 'none';
 });
